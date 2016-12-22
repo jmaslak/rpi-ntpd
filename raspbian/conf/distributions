@@ -1,0 +1,9 @@
+Origin: rPi Raspbian NTP Server Backport
+Label: rPi Rasbian NTP Server Backport
+Codename: jessie
+Architectures: armv7l
+Components: main
+Description: rPi Raspbian NTP Server Backport
+SignWith: 569565AB
+verbose
+ask-passphrase
