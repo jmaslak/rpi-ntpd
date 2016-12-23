@@ -1,0 +1,3 @@
+verbose
+basedir /home/jmaslak/git/antelope/rpi-ntpd/raspbian
+ask-passphrase

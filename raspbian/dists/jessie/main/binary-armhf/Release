@@ -1,7 +1,5 @@
+Component: main
 Origin: rPi Raspbian NTP Server Backport
 Label: rPi Rasbian NTP Server Backport
-Codename: jessie
-Architectures: armhf
-Components: main
+Architecture: armhf
 Description: rPi Raspbian NTP Server Backport
-SignWith: 569565AB
