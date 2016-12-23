@@ -4,30 +4,30 @@ Hash: SHA256
 Origin: rPi Raspbian NTP Server Backport
 Label: rPi Rasbian NTP Server Backport
 Codename: jessie
-Date: Fri, 23 Dec 2016 06:07:38 UTC
+Date: Fri, 23 Dec 2016 06:44:17 UTC
 Architectures: armhf
 Components: main
 Description: rPi Raspbian NTP Server Backport
 MD5Sum:
- fe75fcea76d29444dfc4e05c83bbd624 3850 main/binary-armhf/Packages
- a5b112d1729f6ebce3f74535589a2146 1528 main/binary-armhf/Packages.gz
+ 62eb1ead85a6b2599bc14d31dfec3d0d 12492 main/binary-armhf/Packages
+ 92349fbc8e920895edc092fc58a5c22d 3758 main/binary-armhf/Packages.gz
  12e85eef339e5ca88d81ddb301d61383 162 main/binary-armhf/Release
 SHA1:
- 0eab0fe7b1cf35c557af077082dbf132d4e9e944 3850 main/binary-armhf/Packages
- c75c6b244fd0377fca10bd8d44244adfcab115df 1528 main/binary-armhf/Packages.gz
+ b7c15f9a39e4843ebb26cf052631c22c8234ae92 12492 main/binary-armhf/Packages
+ 43ceb3b1ec7a6e0f499cc7556ed977f370b0df11 3758 main/binary-armhf/Packages.gz
  f5466c7297107300f28f19907a4c615e84cb80e2 162 main/binary-armhf/Release
 SHA256:
- 4b915d9b8a12153c455aa69fbb8dfe437e00ebe69b1223883cb6e4e1d50e6daf 3850 main/binary-armhf/Packages
- adef574508bccbf7127b18fc1fcb3bd1b66fe770cc30ac3a9bc80a7a94f55aee 1528 main/binary-armhf/Packages.gz
+ 62f575481c40c2c604962dcd34a51f29ce9d26ed4db9e999c2d6090f87a9d380 12492 main/binary-armhf/Packages
+ e9a8f462bc4d60807f79bb6f59ad6ccbcefd0a3ce1efa905c64fcbbbb7f75e15 3758 main/binary-armhf/Packages.gz
  6e22f793a1c65e22cacebeb916cbf3ae318ab0ba0ca273a9655d8ce5483da741 162 main/binary-armhf/Release
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQEcBAEBCAAGBQJYXL8qAAoJEEZEsXQG38Jxy4wIALflFJPbRCVqoJArnDnIcTcs
-ote+QOCzypsn0f7z7c+TdikH/8eiYLNnfj01gWnMqc6mHi0RHTz4L04voxlwK8Me
-VuzFmGGgoKh793FvX79cntI5Odh+QVM4XE21sxJMpaNyqlc8Gt3DclxlN0RFgvFm
-2SgAj4e+yump7ugUkc7h7jDxzQwGWMCNFkY03Wb5Mj88oBdM55m22iLXUlfbLWop
-sVkjFD3AIMX/kJAzNoQXM51ZXzRbJxjq/bXX/WSkO4pWPrEK4XmaBZuNO6hwooI2
-rf4qgVOQkUXVzI6gLrJUJ39hISjoatzEwBGEaxJJvtbPU39PEA7vlJPc9NDQ6FE=
-=nG8x
+iQEcBAEBCAAGBQJYXMfBAAoJEEZEsXQG38JxLHsIAL1wotZ2CsS85pKNyNSoSFpS
+5ozlN6cWhyFGXWMr57iSv3RuTea7hRE+r6ElQMfCTmJk7OtAQHmLj6W+L8Nvg5Ap
+ByIg1CnO+Mi2EkBN1EO/bNvWPwoYquMSux00V1/LiZZvLuZtahcxQoxqvYvNs8Tx
+wGDb5KeecQxX/Hh7/3ZlKnqpmLYfDN9z9zOZf4f7UGkDRa9Guw0wTqOaf9RMGHn6
+V8r64aTyy9FAim38VzbDGE2w89BYH86ZQyUHS31ZIGIG8D+aFMkGr6Gxr0aljZmU
+wlKcbHaxVSb3FFqVVTbN4h+VF6MLvL22yz1gy4JabIfAkDeBoUJZwcicdfzG+F0=
+=z3Yl
 -----END PGP SIGNATURE-----

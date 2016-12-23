@@ -1,3 +1,185 @@
+Package: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 575
+Depends: netbase | systemd-sysv, lsb-base (>= 3.2-13), adduser (>= 3.34), libbluetooth3 (>= 4.91), libc6 (>= 2.15), libdbus-1-3 (>= 1.0.2), libusb-1.0-0 (>= 2:1.0.8), init-system-helpers (>= 1.18~), libgps22 (= 3.16-4)
+Recommends: udev, python
+Suggests: gpsd-clients, dbus
+Conflicts: fso-gpsd
+Multi-Arch: foreign
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: misc
+Filename: pool/main/g/gpsd/gpsd_3.16-4_armhf.deb
+Size: 242918
+SHA256: 403dcac72366a3fdf5f915dcab8ad232acfcdf2d620961a83cdb4c6e9e730b63
+SHA1: 12cf87c5392423b447d0c3d6a80fe56b46fb951f
+MD5sum: dbd05ab12ab235470efe565af86943db
+Description: Global Positioning System - daemon
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ With gpsd, multiple GPS client applications can share access to devices
+ without contention or loss of data. Also, gpsd responds to queries with a
+ format that is substantially easier to parse than the different standards
+ emitted by GPS devices.
+
+Package: gpsd-clients
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 1773
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.15), libdbus-1-3 (>= 1.0.2), libncurses5 (>= 5.5-5~), libtinfo5, libusb-1.0-0 (>= 2:1.0.8), libgps22 (= 3.16-4), python-gps, python-gtk2, python-cairo
+Suggests: gpsd
+Conflicts: gps
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: misc
+Filename: pool/main/g/gpsd/gpsd-clients_3.16-4_armhf.deb
+Size: 348596
+SHA256: 5f64350a0410df07837035e2e07dc110808d51afefae130e585ce9f444849d06
+SHA1: d114b46b5f12f6de6345f5caf7555d41a5a82db7
+MD5sum: c446bf81036b20bd53138dd1cb00783d
+Description: Global Positioning System - clients
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package contains auxiliary tools and example clients for monitoring and
+ testing gpsd.
+
+Package: gpsd-dbg
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 826
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.17), libdbus-1-3 (>= 1.0.2), libgcc1 (>= 1:4.4.0), libstdc++6 (>= 4.3.0), libusb-1.0-0 (>= 2:1.0.8), python:any (>= 2.6.6-7~), libgps22 (= 3.16-4) | gpsd (= 3.16-4) | gpsd-clients (= 3.16-4) | python-gps (= 3.16-4)
+Suggests: gpsd-dbgsym
+Homepage: http://www.catb.org/gpsd/
+Priority: extra
+Section: debug
+Filename: pool/main/g/gpsd/gpsd-dbg_3.16-4_armhf.deb
+Size: 226928
+SHA256: ce713ab1fbb47e6b25651b7fa768668d822211f437d203cea7910cc8189c59ab
+SHA1: 016c7932bea130356690778ca83f12b81633a7fb
+MD5sum: 738f326ecbf6887f845ad45db27f8e67
+Description: Global Positioning System - debugging symbols
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package contains the python debug modules and some test tools
+ to the debug the behaviour of gpsd. Debug symbols are being shipped
+ in the dbgsym package.
+
+Package: libgps-dev
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 328
+Depends: libgps22 (= 3.16-4), pkg-config
+Conflicts: gpsd (<< 2.34.dfsg-1)
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: libdevel
+Filename: pool/main/g/gpsd/libgps-dev_3.16-4_armhf.deb
+Size: 131240
+SHA256: c37be57c3d5873fce719cd2e0809e7a3c01fb9428c78a73c101991b1ee799795
+SHA1: ccab2530123c4f86e66eb711d034e4a67a71bd77
+MD5sum: e935b57bcc74afc6dbcb4546d5a59308
+Description: Global Positioning System - development files
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package contains the header and development files needed to build
+ programs and packages using libgps.
+
+Package: libgps22
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 174
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.15), libdbus-1-3 (>= 1.0.2), libgcc1 (>= 1:4.4.0), libstdc++6 (>= 4.1.1)
+Suggests: gpsd
+Conflicts: fso-gpsd
+Multi-Arch: same
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: libs
+Filename: pool/main/g/gpsd/libgps22_3.16-4_armhf.deb
+Size: 87852
+SHA256: de54fdb2781b786f24ce213ba8b58677043cbf509826306ade4dd6cb221c7d3e
+SHA1: 64eb20d5434c9040cc3a0f90537aafa7b3aa73c6
+MD5sum: 1f3e50d9f3979d2975efa2a90149e5c8
+Description: Global Positioning System - library
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package provides libgps, a C service library for querying GPS
+ devices. It supports both a low-level interface, which communicates
+ directly with the device to which the GPS is connected, and a high-level
+ interface, which goes through gpsd and is intended for concurrent use by
+ several applications.
+
+Package: libqgpsmm-dev
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 92
+Depends: pkg-config, libqgpsmm22 (= 3.16-4), libgps-dev (= 3.16-4)
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: libdevel
+Filename: pool/main/g/gpsd/libqgpsmm-dev_3.16-4_armhf.deb
+Size: 46026
+SHA256: b692f72c73f00a5279ee50bb7535b7611b4cdf48755711ca5cad8233bc6d0e1a
+SHA1: bfc01b7ec7a18339215e0ec96d38780c556f60b6
+MD5sum: 1df72331234355364315c8a50d1ee1b0
+Description: Global Positioning System - Qt wrapper for libgps (development)
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package provides libQgpsmm, the Qt version of libgpsmm.
+ It is a wrapper over libgps, the service library for querying GPS
+ devices. libQgpsmm is available on all platforms which are supported
+ by Qt4.
+
+Package: libqgpsmm22
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 182
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.7), libdbus-1-3 (>= 1.0.2), libgcc1 (>= 1:4.4.0), libqt4-network (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1), libstdc++6 (>= 4.3.0)
+Multi-Arch: same
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: libs
+Filename: pool/main/g/gpsd/libqgpsmm22_3.16-4_armhf.deb
+Size: 90862
+SHA256: c9738ee504380c0c4ee2cffa11f5a2d6498839e42aeb194aa86136e6e3022e1f
+SHA1: 1eff91b67c91232c7c1969b664600a34bb38cd40
+MD5sum: 77f612b8fe71719534c8342c3f873516
+Description: Global Positioning System - Qt wrapper for libgps
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package provides libQgpsmm, the Qt version of libgpsmm.
+ It is a wrapper over libgps, the service library for querying GPS
+ devices. libQgpsmm is available on all platforms which are supported
+ by Qt4.
+
 Package: ntp
 Version: 1:4.2.8p9+dfsg-jcm-1
 Architecture: armhf
@@ -88,4 +270,33 @@ Description: client for setting system time from NTP servers
  .
  If the full NTP daemon from the package "ntp" is installed, then
  ntpdate is not necessary.
+
+Package: python-gps
+Source: gpsd
+Version: 3.16-4
+Architecture: armhf
+Maintainer: Bernd Zeimetz <bzed@debian.org>
+Installed-Size: 251
+Depends: libbluetooth3 (>= 4.91), libc6 (>= 2.4), libdbus-1-3 (>= 1.0.2), python (>= 2.7), python (<< 2.8)
+Recommends: gpsd
+Conflicts: python-json
+Replaces: gpsd-clients (<< 2.34.dfsg-1)
+Provides: python2.7-gps
+Homepage: http://www.catb.org/gpsd/
+Priority: optional
+Section: python
+Filename: pool/main/g/gpsd/python-gps_3.16-4_armhf.deb
+Size: 95500
+SHA256: 22fab42d7b22029348b1d7d9cc48e925340035ba09354a5811d4778041d6f487
+SHA1: af1680b4b8726aaada82538d7a0906d18aa2cee9
+MD5sum: 772e3f296614f22e205b83e98f3d1186
+Description: Global Positioning System - Python libraries
+ The gpsd service daemon can monitor one or more GPS devices connected to
+ a host computer, making all data on the location and movements of the
+ sensors available to be queried on TCP port 2947.
+ .
+ This package contains a Python interface to connect to gpsd, together with
+ a module providing a controlled testing environment. It also ships two tools
+ which utilize the interface: gpsprof for latency-profiling, and gpsfake to
+ simulate a GPS by playing back a logfile.
 
