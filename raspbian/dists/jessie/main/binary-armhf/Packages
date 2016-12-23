@@ -1,5 +1,5 @@
 Package: ntp
-Version: 1:4.2.8p9+dfsg-2
+Version: 1:4.2.8p9+dfsg-jcm-1
 Architecture: armhf
 Maintainer: Debian NTP Team <pkg-ntp-maintainers@lists.alioth.debian.org>
 Installed-Size: 1418
@@ -12,11 +12,11 @@ Replaces: apparmor-profiles-extra (<< 1.8)
 Homepage: http://support.ntp.org/
 Priority: optional
 Section: net
-Filename: pool/main/n/ntp/ntp_4.2.8p9+dfsg-2_armhf.deb
-Size: 465802
-SHA256: c1c6d258c8e13d2b7f8689a13185c647d856ae228a583b13f84c9d3592c2eb20
-SHA1: 6cb5bd22ffb4ce4bd2969a71c1d4626b6545fc41
-MD5sum: 93e6b581a29b343e77d2005cc4740aee
+Filename: pool/main/n/ntp/ntp_4.2.8p9+dfsg-jcm-1_armhf.deb
+Size: 466010
+SHA256: 9700a175a2d576d07c57137fc2877df5d8ab592b6c1c8e7a99ef1cc50dbfb989
+SHA1: 908988bb5ce63e9c8c0ce1a008083ff76b1c214b
+MD5sum: 6b094038454e92419fe7639a89482682
 Description: Network Time Protocol daemon and utility programs
  NTP, the Network Time Protocol, is used to keep computer clocks
  accurate by synchronizing them over the Internet or a local network,
@@ -33,18 +33,18 @@ Description: Network Time Protocol daemon and utility programs
 
 Package: ntp-doc
 Source: ntp
-Version: 1:4.2.8p9+dfsg-2
+Version: 1:4.2.8p9+dfsg-jcm-1
 Architecture: all
 Maintainer: Debian NTP Team <pkg-ntp-maintainers@lists.alioth.debian.org>
 Installed-Size: 2079
 Homepage: http://support.ntp.org/
 Priority: optional
 Section: doc
-Filename: pool/main/n/ntp/ntp-doc_4.2.8p9+dfsg-2_all.deb
-Size: 1192136
-SHA256: 8764b8bfe523a3684fb91fffd433730401d09fb4565d87caa21972808a4ec470
-SHA1: e1cf6b03e49b700189afe336ddb02575fcdafea0
-MD5sum: 6877103d1b01b7c05535653c62b8eb2e
+Filename: pool/main/n/ntp/ntp-doc_4.2.8p9+dfsg-jcm-1_all.deb
+Size: 1192534
+SHA256: 09b5631d856b09004b60bf89a8b6bc339ceaa7197c8c7df7fa61c0891e232854
+SHA1: 4df3b501655cd30fa418548815aaecc00a08b9a1
+MD5sum: 4cc5f47ba3b3431671f5c94a094070d8
 Description: Network Time Protocol documentation
  NTP, the Network Time Protocol, is used to keep computer clocks
  accurate by synchronizing them over the Internet or a local network,
@@ -58,21 +58,21 @@ Description: Network Time Protocol documentation
 
 Package: ntpdate
 Source: ntp
-Version: 1:4.2.8p9+dfsg-2
+Version: 1:4.2.8p9+dfsg-jcm-1
 Architecture: armhf
 Maintainer: Debian NTP Team <pkg-ntp-maintainers@lists.alioth.debian.org>
-Installed-Size: 198
+Installed-Size: 199
 Pre-Depends: dpkg (>= 1.15.7.2)
 Depends: netbase, libc6 (>= 2.17), libssl1.0.0 (>= 1.0.0)
 Breaks: dhcp3-client (<< 4.1.0-1)
 Homepage: http://support.ntp.org/
 Priority: optional
 Section: net
-Filename: pool/main/n/ntp/ntpdate_4.2.8p9+dfsg-2_armhf.deb
-Size: 67268
-SHA256: 41ac1e5aeef64a249f653613209a644bbdfc47122aab6d331ba6b1cb2b247d86
-SHA1: 17aa00a73a7122d50c66f47f918d54c2680aab9e
-MD5sum: c757baa72a18940f8b2a347fcbc71bbb
+Filename: pool/main/n/ntp/ntpdate_4.2.8p9+dfsg-jcm-1_armhf.deb
+Size: 67404
+SHA256: da6404059e595fedf662016afcd51c08950d4cd0c0e56f8d60575d320badba3a
+SHA1: 45efbb81974141c49c3ab236bdc23f92009515bc
+MD5sum: 749074d531171283f3d7be2335df7e4d
 Description: client for setting system time from NTP servers
  NTP, the Network Time Protocol, is used to keep computer clocks
  accurate by synchronizing them over the Internet or a local network,

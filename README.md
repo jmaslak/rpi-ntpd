@@ -10,5 +10,5 @@ Then:
 
     apt-get update
 
-    apt-get install ntpd
+    apt-get install ntp
 

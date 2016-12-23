@@ -1,19 +1,19 @@
 Origin: rPi Raspbian NTP Server Backport
 Label: rPi Rasbian NTP Server Backport
 Codename: jessie
-Date: Fri, 23 Dec 2016 04:17:37 UTC
+Date: Fri, 23 Dec 2016 06:07:38 UTC
 Architectures: armhf
 Components: main
 Description: rPi Raspbian NTP Server Backport
 MD5Sum:
- 5bfa17f8819ade7e999a8a138cc5c73e 3826 main/binary-armhf/Packages
- f555e2adf03d95abcdacd85193ab4cf2 1522 main/binary-armhf/Packages.gz
+ fe75fcea76d29444dfc4e05c83bbd624 3850 main/binary-armhf/Packages
+ a5b112d1729f6ebce3f74535589a2146 1528 main/binary-armhf/Packages.gz
  12e85eef339e5ca88d81ddb301d61383 162 main/binary-armhf/Release
 SHA1:
- 907bcc16e2b143aed8c4eadae210a81f3a353906 3826 main/binary-armhf/Packages
- 225696c25fa7351d34b2c75daf434529fbd9af35 1522 main/binary-armhf/Packages.gz
+ 0eab0fe7b1cf35c557af077082dbf132d4e9e944 3850 main/binary-armhf/Packages
+ c75c6b244fd0377fca10bd8d44244adfcab115df 1528 main/binary-armhf/Packages.gz
  f5466c7297107300f28f19907a4c615e84cb80e2 162 main/binary-armhf/Release
 SHA256:
- 7a7c27e2694ff6001504e35b317e7f642b62f129e808879f87aed83662b1e166 3826 main/binary-armhf/Packages
- 00068dd4e5f58d540abf3a38b8e7f3ecdba2effaa54658e9079829da72d679d0 1522 main/binary-armhf/Packages.gz
+ 4b915d9b8a12153c455aa69fbb8dfe437e00ebe69b1223883cb6e4e1d50e6daf 3850 main/binary-armhf/Packages
+ adef574508bccbf7127b18fc1fcb3bd1b66fe770cc30ac3a9bc80a7a94f55aee 1528 main/binary-armhf/Packages.gz
  6e22f793a1c65e22cacebeb916cbf3ae318ab0ba0ca273a9655d8ce5483da741 162 main/binary-armhf/Release
