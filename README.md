@@ -2,7 +2,13 @@
 
 To use this repo:
 
-    curl http://jmaslak.github.io/rpi-ntpd/raspbian/rpi-ntpd.list >/etc/apt/sources.list.d/rpi-ntpd.list
+    wget -O /etc/apt/sources.list.d/rpi-ntpd.list http://jmaslak.github.io/rpi-ntpd/raspbian/rpi-ntpd.list
 
-    curl http://jmaslak.github.io/rpi-ntpd/raspbian/conf/jmaslak.gpg.key | apt-key add -
+    wget -O - http://jmaslak.github.io/rpi-ntpd/raspbian/conf/jmaslak.gpg.key | apt-key add -
+
+Then:
+
+    apt-get update
+
+    apt-get install ntpd
 
