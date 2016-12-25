@@ -1,0 +1,107 @@
+diff --git a/ntpd/refclock_gpsdjson.c b/ntpd/refclock_gpsdjson.c
+index 7c49311..9168f38 100644
+--- a/ntpd/refclock_gpsdjson.c
++++ b/ntpd/refclock_gpsdjson.c
+@@ -41,6 +41,11 @@
+  * secondary unit is feed with the PPS samples only and can act as a PPS
+  * source to the clock selection.
+  *
++ * Finally, there is a special unit of 255 which essentially means to
++ * not specify any device - use whatever gpsd has available to it.  In
++ * this case bad things will happen if two GPS units or two PPS sources
++ * are defined for gpsd!
++ *
+  * The drawback is that the primary unit must be present for the
+  * secondary unit to work.
+  *
+@@ -510,7 +515,8 @@ gpsd_start(
+ 		return FALSE;
+ 
+ 	/* search for matching unit */
+-	while ((up = *uscan) != NULL && up->unit != (unit & 0x7F))
++	int mask = (unit == 255) ? 0xFF : 0x7F;
++	while ((up = *uscan) != NULL && up->unit != (unit & mask))
+ 		uscan = &up->next_unit;
+ 	if (up == NULL) {
+ 		/* alloc unit, add to list and increment use count ASAP. */
+@@ -520,7 +526,7 @@ gpsd_start(
+ 
+ 		/* initialize the unit structure */
+ 		up->logname  = estrdup(refnumtoa(&peer->srcadr));
+-		up->unit     = unit & 0x7F;
++		up->unit     = unit & mask;
+ 		up->fdt      = -1;
+ 		up->addr     = s_gpsd_addr;
+ 		up->tickpres = TICKOVER_LOW;
+@@ -531,17 +537,23 @@ gpsd_start(
+ 		 * practicable, we will have to read the symlink, if
+ 		 * any, so we can get the true device file.)
+ 		 */
+-		if (-1 == myasprintf(&up->device, "%s%u",
++		if (up->unit != 255 && -1 == myasprintf(&up->device, "%s%u",
+ 				     s_dev_stem, up->unit)) {
+ 			msyslog(LOG_ERR, "%s: clock device name too long",
+ 				up->logname);
+ 			goto dev_fail;
+ 		}
+-		if (-1 == stat(up->device, &sb) || !S_ISCHR(sb.st_mode)) {
++		if ((up->unit != 255) && (-1 == stat(up->device, &sb) || !S_ISCHR(sb.st_mode))) {
+ 			msyslog(LOG_ERR, "%s: '%s' is not a character device",
+ 				up->logname, up->device);
+ 			goto dev_fail;
+ 		}
++
++		/* If the unit is 255, we don't use a device name */
++		if (up->unit == 255) {
++			myasprintf(&up->device, "any");
++		}
++
+ 	} else {
+ 		/* All set up, just increment use count. */
+ 		++up->refcount;
+@@ -559,7 +571,7 @@ gpsd_start(
+ 	memcpy(&pp->refid, REFID, 4);
+ 
+ 	/* Initialize miscellaneous variables */
+-	if (unit >= 128)
++	if (unit >= 128 && unit != 255)
+ 		peer->precision = PPS_PRECISION;
+ 	else
+ 		peer->precision = PRECISION;
+@@ -577,7 +589,7 @@ gpsd_start(
+ 	up->mode = MODE_OP_MODE(peer->ttl);
+ 	if (up->mode > MODE_OP_MAXVAL)
+ 		up->mode = 0;
+-	if (unit >= 128)
++	if (unit >= 128 && unit != 255)
+ 		up->pps_peer = peer;
+ 	else
+ 		enter_opmode(peer, up->mode);
+@@ -1426,7 +1438,7 @@ process_watch(
+ 	const char * path;
+ 
+ 	path = json_object_lookup_string(jctx, 0, "device");
+-	if (NULL == path || strcmp(path, up->device))
++	if (NULL == path || strcmp(path, up->device) || up->unit == 255)
+ 		return;
+ 
+ 	if (json_object_lookup_bool(jctx, 0, "enable") > 0 &&
+@@ -1510,9 +1522,15 @@ process_version(
+ 	 * from our unit number. We have an old a newer version that
+ 	 * request PPS (and TOFF) transmission.
+ 	 */
+-	snprintf(up->buffer, sizeof(up->buffer),
+-		 "?WATCH={\"device\":\"%s\",\"enable\":true,\"json\":true%s};\r\n",
+-		 up->device, (up->pf_toff ? ",\"pps\":true" : ""));
++	if (up->unit != 255) {
++		snprintf(up->buffer, sizeof(up->buffer),
++			 "?WATCH={\"device\":\"%s\",\"enable\":true,\"json\":true%s};\r\n",
++			 up->device, (up->pf_toff ? ",\"pps\":true" : ""));
++	} else {
++		snprintf(up->buffer, sizeof(up->buffer),
++			 "?WATCH={\"enable\":true,\"json\":true%s};\r\n",
++			 (up->pf_toff ? ",\"pps\":true" : ""));
++	}
+ 	buf = up->buffer;
+ 	len = strlen(buf);
+ 	log_data(peer, "send", buf, len);
